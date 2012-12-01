@@ -1,4 +1,8 @@
 Tweetmap::Application.routes.draw do
+  
+  root :to => 'finder#index'
+  resource :tweets
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
