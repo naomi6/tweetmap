@@ -1,4 +1,12 @@
-<h3>Tweets using the word "<%= request.params[:word] %>" near you:</h3>
+<form method="get" action="/tweets">
+  <input type="hidden" name="lat" value="<%=params[:lat]%>">
+  <input type="hidden" name="lon" value="<%=params[:lon]%>">
+  <h3>
+    Tweets using the word
+    <input type="text" name="word" value="<%= params[:word] %>">
+     near you:
+  </h3>
+</form>
 
 <ul class="media-list">
   <% @tweets.each do |tweet| %>
