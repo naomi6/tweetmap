@@ -1,8 +1,10 @@
-<h3>"<%= request.params[:word] %>" tweets near you:</h3>
+<h3>Tweets using the word "<%= request.params[:word] %>" near you:</h3>
 
-<ul>
+<ul class="media-list">
   <% @tweets.each do |tweet| %>
-    <li>
+    <li class="media">
+      <%= image_tag(tweet["profile_image_url"]) %>
+      
       <strong>@<%= tweet["from_user"] %></strong>
       <%= tweet["text"] %>
     </li>
