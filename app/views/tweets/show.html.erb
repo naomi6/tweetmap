@@ -8,6 +8,17 @@
   </h3>
 </form>
 
+<style>
+  #map_canvas{
+    height: 400px;
+    width: 400px;
+    margin: 20px;
+  }
+</style>
+<div id="map_canvas"></div>
+<script> initialize(<%=request.params[:lat]%>, <%=request.params[:lon]%>) </script>
+
+
 <ul class="media-list">
   <% @tweets.each do |tweet| %>
     <li class="media">
