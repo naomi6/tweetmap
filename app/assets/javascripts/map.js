@@ -52,9 +52,30 @@ function initialize(lat, lng){
         map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
         map.setOptions({styles:map_style.google_maps_customization_style});
 
+    var marker1type = {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 3,
+          fillOpacity: 1,
+          fillColor: "#f5b644",
+          strokeWeight: 0
+        };
+    var marker2type = {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 3,
+          fillOpacity: 1,
+          fillColor: "#68def8",
+          strokeWeight: 0
+        };   
     
-    marker = new google.maps.Marker({map: map, position: latlng});
-    /*
+    //marker = new google.maps.Marker({map: map, position: latlng});
+    marker = new google.maps.Marker({
+        position: latlng,
+        icon: marker2type,
+        draggable: false,
+        map: map
+      });
+    
+          /*
 
     if(get_all){
         $.get('/tweets', function(tweets)) {
