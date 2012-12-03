@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
     lon = request.params[:lon]
     word = request.params[:word]
     
-    @tweets = JSON.parse(RestClient.get("http://search.twitter.com/search.json", :params => { :q => "#{word}", :geocode => "#{lat},#{lon},30mi" }).body)["results"]
+    @tweets = JSON.parse(RestClient.get("http://search.twitter.com/search.json", :params => { :q => "#{word}", :geocode => "#{lat},#{lon},10mi" }).body)["results"]
     #@tweets.each do |tweet|
       #location = tweet['location']
       #break if location.nil?

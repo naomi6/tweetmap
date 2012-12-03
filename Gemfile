@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 gem 'twitter'
 gem 'geocoder'
 gem 'rest-client'
+gem 'gmaps4rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
