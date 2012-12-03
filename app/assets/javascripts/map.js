@@ -8,7 +8,7 @@ function initialize(lat, lng){
     
     var options = {
         center: latlng,
-        zoom: 4,
+        zoom: 12,
         mapTypeId:google.maps.MapTypeId.SATELLITE,
         mapTypeControl:false,
         minZoom:1,
@@ -22,7 +22,7 @@ function initialize(lat, lng){
     
     
     map = new google.maps.Map(document.getElementById("map_canvas"), options);
-    
+    /*
     var map_style = {};
         map_style.google_maps_customization_style = [
             {
@@ -49,9 +49,11 @@ function initialize(lat, lng){
         }
 
 
-        map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+        
         map.setOptions({styles:map_style.google_maps_customization_style});
-
+    */
+    map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+    
     var marker1type = {
           path: google.maps.SymbolPath.CIRCLE,
           scale: 3,
@@ -67,25 +69,28 @@ function initialize(lat, lng){
           strokeWeight: 0
         };   
     
-    //marker = new google.maps.Marker({map: map, position: latlng});
+    marker = new google.maps.Marker({map: map, position: latlng});
+   /*
     marker = new google.maps.Marker({
         position: latlng,
         icon: marker2type,
         draggable: false,
         map: map
       });
+    */      
     
-          /*
-
-    if(get_all){
-        $.get('/tweets', function(tweets)) {
-            for(var tweet in tweets) {
-                var latlng = new google.maps.LatLng(tweets[tweet]['location']['latitude'], tweets[tweet]['location']['longitude']);
-                var user_marker = new google.maps.Marker({
-                    map: map,
-                    position:
-                })
-            }
+    /*
+    $.get(window.location, function(tweets) {
+        for (var tweet in tweets){
+            var latlng = new google.maps.LatLng(tweets["latitude"],tweets["longitude"]);
+            marker = new google.maps.Marker({
+                position: latlng,
+                icon: marker2type,
+                draggable: false,
+                map: map
+              });
         }
-    */
+        
+    });*/
+  
 }
